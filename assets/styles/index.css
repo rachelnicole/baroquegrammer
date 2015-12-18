@@ -701,3 +701,10 @@ div#form-submit {
     fill: #FF6D92;
   }
 }
+
+p.credit {
+  text-transform: uppercase;
+  font-size: 13px;
+  position: absolute;
+  bottom: 0px;
+}
