@@ -49,6 +49,12 @@ $(function() {
         if (face) {
           placeFace();
           sizeFace(face);
+          document.getElementsByClassName('loading')[0].classList.add('visible');
+          window.setTimeout(function() {
+            document.getElementsByClassName('loading')[0].classList.remove('visible');
+            document.getElementsByClassName('main-image')[0].classList.add('visible');
+            document.getElementsByTagName('body')[0].classList.add('horsed');
+          }, 5000);
         } else {
           alert(
             "Yikes! Couldn't find a face in this image. Try another one. " +
@@ -75,12 +81,6 @@ $(function() {
       imagePreview.attr('src', event.target.result)
       processFace();
     }
-    document.getElementsByClassName('loading')[0].classList.add('visible');
-    window.setTimeout(function() {
-      document.getElementsByClassName('loading')[0].classList.remove('visible');
-      document.getElementsByClassName('main-image')[0].classList.add('visible');
-      document.getElementsByTagName('body')[0].classList.add('horsed');
-    }, 5000);
     reader.readAsDataURL(data);
   }
 
